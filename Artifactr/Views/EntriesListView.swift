@@ -154,6 +154,11 @@ struct EntriesListView: View {
         }
         #if os(iOS)
         .scrollContentBackground(.hidden)
+        .contentMargins(
+            .bottom,
+            UIDevice.current.userInterfaceIdiom == .phone ? 80 : 0,
+            for: .scrollContent
+        )
         #endif
     }
 
